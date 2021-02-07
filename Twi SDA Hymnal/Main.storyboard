@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16095" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="8Ny-HH-lhf">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16084.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Wogyaf.ttf">
+            <string>Wogyaf-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Favorites-->
+        <scene sceneID="rSP-ex-erN">
+            <objects>
+                <viewController id="ccu-LY-xhb" customClass="FavoritesViewController" customModule="Twi_SDA_Hymnal" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Ue-DF-HMl"/>
+                        <viewControllerLayoutGuide type="bottom" id="IKn-Gh-l8d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ywf-Qa-dkD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ehg-4O-nLM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favHymnCell" id="4OW-Ut-w9J" customClass="SwipeTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4OW-Ut-w9J" id="Pdf-uj-kyE">
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ccu-LY-xhb" id="gGk-rO-eqb"/>
+                                    <outlet property="delegate" destination="ccu-LY-xhb" id="X50-wc-Vge"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ehg-4O-nLM" firstAttribute="leading" secondItem="Ywf-Qa-dkD" secondAttribute="leading" id="9vY-1b-DSA"/>
+                            <constraint firstItem="Ehg-4O-nLM" firstAttribute="top" secondItem="8Ue-DF-HMl" secondAttribute="bottom" id="RNl-fc-ieP"/>
+                            <constraint firstAttribute="bottom" secondItem="Ehg-4O-nLM" secondAttribute="bottom" id="cLL-hf-una"/>
+                            <constraint firstAttribute="trailing" secondItem="Ehg-4O-nLM" secondAttribute="trailing" id="mgD-TA-iep"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Favorites" id="mrg-Zq-XFO"/>
+                    <connections>
+                        <outlet property="tableView" destination="Ehg-4O-nLM" id="UX9-0s-oB5"/>
+                        <segue destination="TSK-ru-Fyq" kind="push" identifier="favToHymn" id="iKG-AJ-t86"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="trc-WO-PL9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1948" y="9.6059113300492616"/>
+        </scene>
+        <!--SDA Hymnal-->
+        <scene sceneID="SAj-Rh-o9q">
+            <objects>
+                <viewController storyboardIdentifier="welcomeVC" id="w26-XG-9cC" customClass="HomeViewController" customModule="Twi_SDA_Hymnal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cQy-VU-q98"/>
+                        <viewControllerLayoutGuide type="bottom" id="9mT-Oj-xlJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9g1-SA-C5Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search ..." translatesAutoresizingMaskIntoConstraints="NO" id="K7T-Ko-f9E">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="rjd-uf-IXb"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dhl-gl-cXL">
+                                <rect key="frame" x="0.0" y="44" width="375" height="680"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="hymnCell" id="5Ip-jr-EwF">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Ip-jr-EwF" id="Rau-bN-euH">
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9g1-SA-C5Y" id="KHY-lB-LTe"/>
+                                    <outlet property="delegate" destination="9g1-SA-C5Y" id="bEP-iF-gqQ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="K7T-Ko-f9E" firstAttribute="top" secondItem="cQy-VU-q98" secondAttribute="bottom" id="10b-yb-IhR"/>
+                            <constraint firstItem="Dhl-gl-cXL" firstAttribute="leading" secondItem="9g1-SA-C5Y" secondAttribute="leading" id="9LC-V9-kWX"/>
+                            <constraint firstItem="K7T-Ko-f9E" firstAttribute="leading" secondItem="9g1-SA-C5Y" secondAttribute="leading" id="Rup-SA-ONi"/>
+                            <constraint firstAttribute="bottom" secondItem="Dhl-gl-cXL" secondAttribute="bottom" id="TLJ-CD-WCC"/>
+                            <constraint firstAttribute="trailing" secondItem="Dhl-gl-cXL" secondAttribute="trailing" id="XH7-4s-Gjh"/>
+                            <constraint firstItem="Dhl-gl-cXL" firstAttribute="top" secondItem="cQy-VU-q98" secondAttribute="bottom" constant="44" id="Y0z-lW-zju"/>
+                            <constraint firstAttribute="trailing" secondItem="K7T-Ko-f9E" secondAttribute="trailing" id="uoQ-IS-4z0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="SDA Hymnal" id="qIL-hP-GCy">
+                        <barButtonItem key="leftBarButtonItem" title="User Account" image="person.crop.circle.fill" catalog="system" id="Vfk-1v-jnm"/>
+                        <barButtonItem key="rightBarButtonItem" image="star.fill" catalog="system" id="uwY-i7-Yns">
+                            <connections>
+                                <segue destination="ccu-LY-xhb" kind="push" id="giJ-tN-9hj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="K7T-Ko-f9E" id="p3i-dG-aVd"/>
+                        <outlet property="tableView" destination="Dhl-gl-cXL" id="9OZ-Ts-LKE"/>
+                        <segue destination="TSK-ru-Fyq" kind="push" identifier="loadHymn" id="d7F-Jr-I0o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d1I-xB-PqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234.40000000000001" y="10.344827586206897"/>
+        </scene>
+        <!--Hymn - 1-->
+        <scene sceneID="4qC-8p-E1p">
+            <objects>
+                <viewController id="TSK-ru-Fyq" customClass="HymnViewController" customModule="Twi_SDA_Hymnal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q1v-io-ViF"/>
+                        <viewControllerLayoutGuide type="bottom" id="3YB-wb-Wtf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ORZ-lJ-C63">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Q5p-Bf-x7W">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ngr-I0-vNM"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="English"/>
+                                    <segment title="Twi"/>
+                                </segments>
+                            </segmentedControl>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UTs-0W-WWW" userLabel="English Hymn Content">
+                                <rect key="frame" x="10" y="40" width="355" height="640"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YuJ-63-OnN" userLabel="Twi Hymn Content">
+                                <rect key="frame" x="10" y="50" width="355" height="630"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Wogyaf-Regular" family="Wogyaf" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Q5p-Bf-x7W" firstAttribute="leading" secondItem="ORZ-lJ-C63" secondAttribute="leading" id="CYC-t9-mOF"/>
+                            <constraint firstItem="3YB-wb-Wtf" firstAttribute="top" secondItem="UTs-0W-WWW" secondAttribute="bottom" constant="10" id="OmA-GC-bM8"/>
+                            <constraint firstItem="UTs-0W-WWW" firstAttribute="leading" secondItem="ORZ-lJ-C63" secondAttribute="leading" constant="10" id="Q0a-Xb-mzG"/>
+                            <constraint firstItem="Q5p-Bf-x7W" firstAttribute="top" secondItem="Q1v-io-ViF" secondAttribute="bottom" id="Tgw-aO-Zux"/>
+                            <constraint firstAttribute="trailing" secondItem="UTs-0W-WWW" secondAttribute="trailing" constant="10" id="Zpa-hp-6kg"/>
+                            <constraint firstAttribute="trailing" secondItem="YuJ-63-OnN" secondAttribute="trailing" constant="10" id="fch-CU-qiD"/>
+                            <constraint firstItem="YuJ-63-OnN" firstAttribute="leading" secondItem="ORZ-lJ-C63" secondAttribute="leading" constant="10" id="fw6-fQ-xL9"/>
+                            <constraint firstItem="UTs-0W-WWW" firstAttribute="top" secondItem="Q5p-Bf-x7W" secondAttribute="bottom" constant="10" id="kdW-5R-xkE"/>
+                            <constraint firstAttribute="trailing" secondItem="Q5p-Bf-x7W" secondAttribute="trailing" id="nmF-m4-Izc"/>
+                            <constraint firstItem="YuJ-63-OnN" firstAttribute="top" secondItem="Q5p-Bf-x7W" secondAttribute="bottom" constant="20" id="ouy-3G-for"/>
+                            <constraint firstItem="3YB-wb-Wtf" firstAttribute="top" secondItem="YuJ-63-OnN" secondAttribute="bottom" constant="10" id="x7v-gg-wTM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Hymn - 1" id="VCh-8f-5kc">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="5Lh-fA-nTe"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="play.circle" catalog="system" id="eSI-hr-z1c">
+                                <connections>
+                                    <action selector="playMidi:" destination="TSK-ru-Fyq" id="fx5-u8-IsN"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="star" catalog="system" id="3Z4-Fv-YZT">
+                                <connections>
+                                    <action selector="updateUserFavHymn:" destination="TSK-ru-Fyq" id="B0h-Qt-pNU"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="engHymnContent" destination="UTs-0W-WWW" id="lAi-Jt-pG3"/>
+                        <outlet property="favBtn" destination="3Z4-Fv-YZT" id="sti-sK-k9i"/>
+                        <outlet property="playButton" destination="eSI-hr-z1c" id="sfV-Ke-MSd"/>
+                        <outlet property="toggleView" destination="Q5p-Bf-x7W" id="8NO-vJ-Qw4"/>
+                        <outlet property="twiHymnContent" destination="YuJ-63-OnN" id="Oq2-S4-hib"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hcs-Fe-DDM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1111" y="10"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kGX-IT-aXC">
+            <objects>
+                <navigationController storyboardIdentifier="navBar1" automaticallyAdjustsScrollViewInsets="NO" id="8Ny-HH-lhf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="NdW-bI-YIx">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="w26-XG-9cC" kind="relationship" relationship="rootViewController" id="zVv-In-YsK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nv2-mt-Fbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-534.39999999999998" y="10.794602698650676"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="d7F-Jr-I0o"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="play.circle" catalog="system" width="128" height="121"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+    </resources>
+</document>
