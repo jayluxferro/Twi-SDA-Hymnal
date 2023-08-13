@@ -58,7 +58,7 @@ class FavoritesViewController: UIViewController {
                             // searching through main hymn db for data
                             
                             self.hymnDB
-                                .whereField(K.hymn.num, isEqualTo: userFavHymn!.num!)
+                                .whereField(K.hymn.num, isEqualTo: userFavHymn.num!)
                                 .limit(to: 1)
                                 .addSnapshotListener { (hymnSnapshot, hymnError) in
                                     if hymnError != nil {
@@ -73,8 +73,8 @@ class FavoritesViewController: UIViewController {
                                     
                                     for hymnDoc in hymnSnapshot!.documents {
                                         do{
-                                            userFavHymn?.hymn = try hymnDoc.data(as: Hymn.self)
-                                            self.hymns.append(userFavHymn!)
+                                            userFavHymn.hymn = try hymnDoc.data(as: Hymn.self)
+                                            self.hymns.append(userFavHymn)
                                             counter += 1
                                             if SVProgressHUD.isVisible() {
                                                 SVProgressHUD.showProgress(Float(counter)/Float(totalHymns!), status: K.loader.loading)

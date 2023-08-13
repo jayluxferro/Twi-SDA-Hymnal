@@ -53,7 +53,7 @@ class HomeViewController: UIViewController {
                     let totalHymns = querySnapshot?.count
                     for document in querySnapshot!.documents {
                         do {
-                            try self.hymns.append(document.data(as: Hymn.self)!)
+                            try self.hymns.append(document.data(as: Hymn.self))
                             counter += 1
                             if SVProgressHUD.isVisible() {
                                 SVProgressHUD.showProgress(Float(counter)/Float(totalHymns!), status: K.loader.loading)
